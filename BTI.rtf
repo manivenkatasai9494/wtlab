@@ -1,0 +1,1047 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}{\f2\fnil\fcharset0 Cambria Math;}{\f3\fnil Consolas;}}
+{\colortbl ;\red0\green0\blue255;\red127\green0\blue85;\red0\green0\blue0;\red0\green0\blue192;\red106\green62\blue62;\red63\green127\blue95;\red127\green159\blue191;\red42\green0\blue255;}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qj\f0\fs22\lang9 1.create a web page using the advanced features of css:Grid,Flexbox.And apply transition and animations on the contents of the webpage\par
+HTML\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>CSS Grid and Flexbox Example</title>\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <header class="header">\par
+        <h1>My Awesome Web Page</h1>\par
+    </header>\par
+    <main class="main-content">\par
+        <section class="grid-container">\par
+            <div class="grid-item">Item 1</div>\par
+            <div class="grid-item">Item 2</div>\par
+            <div class="grid-item">Item 3</div>\par
+            <div class="grid-item">Item 4</div>\par
+            <div class="grid-item">Item 5</div>\par
+        </section>\par
+    </main>\par
+    <footer class="footer">\par
+        <p>Footer Content</p>\par
+    </footer>\par
+</body>\par
+</html>\par
+\par
+CSS\par
+* \{\par
+    box-sizing: border-box;\par
+    margin: 0;\par
+    padding: 0;\par
+\}\par
+\par
+body \{\par
+    font-family: Arial, sans-serif;\par
+    display: flex;\par
+    flex-direction: column;\par
+    height: 100vh;\par
+\}\par
+\par
+.header \{\par
+    background-color: #4CAF50;\par
+    color: white;\par
+    text-align: center;\par
+    padding: 20px;\par
+\}\par
+\par
+.main-content \{\par
+    flex: 1;\par
+    display: flex;\par
+    justify-content: center;\par
+    align-items: center;\par
+    background-color: #f4f4f4;\par
+\}\par
+\par
+.grid-container \{\par
+    display: grid;\par
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\par
+    gap: 15px;\par
+    padding: 20px;\par
+\}\par
+\par
+.grid-item \{\par
+    background-color: #ffcc00;\par
+    padding: 20px;\par
+    border-radius: 5px;\par
+    text-align: center;\par
+    transition: transform 0.3s ease, background-color 0.3s ease;\par
+\}\par
+\par
+.grid-item:hover \{\par
+    transform: scale(1.1);\par
+    background-color: #ffd700;\par
+\}\par
+\par
+.footer \{\par
+    background-color: #333;\par
+    color: white;\par
+    text-align: center;\par
+    padding: 10px;\par
+\}\par
+\par
+@keyframes fadeIn \{\par
+    from \{\par
+        opacity: 0;\par
+    \}\par
+    to \{\par
+        opacity: 1;\par
+    \}\par
+\}\par
+\par
+.header, .footer \{\par
+    animation: fadeIn 1s ease-in;\par
+\}\par
+\par
+2.make the webpages created in the above experiment as responsive web page with Bootstrap Framework\par
+HTML\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Responsive Web Page with Bootstrap</title>\par
+    <link rel="stylesheet" href="{{\field{\*\fldinst{HYPERLINK https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css }}{\fldrslt{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\ul0\cf0}}}}\f0\fs22 ">\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <header class="bg-success text-white text-center py-4">\par
+        <h1>My Awesome Web Page</h1>\par
+    </header>\par
+    <main class="container my-5">\par
+        <section class="row">\par
+            <div class="col-lg-4 col-md-6 mb-4">\par
+                <div class="card grid-item">\par
+                    <div class="card-body">\par
+                        <h5 class="card-title">Item 1</h5>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+            <div class="col-lg-4 col-md-6 mb-4">\par
+                <div class="card grid-item">\par
+                    <div class="card-body">\par
+                        <h5 class="card-title">Item 2</h5>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+            <div class="col-lg-4 col-md-6 mb-4">\par
+                <div class="card grid-item">\par
+                    <div class="card-body">\par
+                        <h5 class="card-title">Item 3</h5>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+            <div class="col-lg-4 col-md-6 mb-4">\par
+                <div class="card grid-item">\par
+                    <div class="card-body">\par
+                        <h5 class="card-title">Item 4</h5>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+            <div class="col-lg-4 col-md-6 mb-4">\par
+                <div class="card grid-item">\par
+                    <div class="card-body">\par
+                        <h5 class="card-title">Item 5</h5>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+        </section>\par
+    </main>\par
+    <footer class="bg-dark text-white text-center py-3">\par
+        <p>Footer Content</p>\par
+    </footer>\par
+\par
+    <script src="{{\field{\*\fldinst{HYPERLINK https://code.jquery.com/jquery-3.5.1.slim.min.js }}{\fldrslt{https://code.jquery.com/jquery-3.5.1.slim.min.js\ul0\cf0}}}}\f0\fs22 "></script>\par
+    <script src="{{\field{\*\fldinst{HYPERLINK https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js }}{\fldrslt{https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\ul0\cf0}}}}\f0\fs22 "></script>\par
+    <script src="{{\field{\*\fldinst{HYPERLINK https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js }}{\fldrslt{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\ul0\cf0}}}}\f0\fs22 "></script>\par
+</body>\par
+</html>\par
+\par
+CSS\par
+.grid-item \{\par
+    background-color: #ffcc00;\par
+    transition: transform 0.3s ease, background-color 0.3s ease;\par
+\}\par
+\par
+.grid-item:hover \{\par
+    transform: scale(1.05);\par
+    background-color: #ffd700;\par
+\}\par
+3.Validate the registration ,user login,user profile and payment pages using javascript .Make use of any needed javascrpt objects\par
+HTML\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Registration</title>\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <h1>Register</h1>\par
+    <form id="registrationForm">\par
+        <input type="text" id="username" placeholder="Username" required>\par
+        <input type="email" id="email" placeholder="Email" required>\par
+        <input type="password" id="password" placeholder="Password" required>\par
+        <button type="submit">Register</button>\par
+        <div id="message" class="error-message"></div>\par
+    </form>\par
+    <script src="script.js"></script>\par
+</body>\par
+</html>\par
+\par
+script.js\par
+document.getElementById("registrationForm").addEventListener("submit", function(event) \{\par
+    event.preventDefault(); // Prevent form submission\par
+    validateRegistration();\par
+\});\par
+\par
+function validateRegistration() \{\par
+    const username = document.getElementById("username").value;\par
+    const email = document.getElementById("email").value;\par
+    const password = document.getElementById("password").value;\par
+    const messageDiv = document.getElementById("message");\par
+    messageDiv.textContent = "";\par
+\par
+    // Simple validation\par
+    if (username.length < 3) \{\par
+        messageDiv.textContent = "Username must be at least 3 characters.";\par
+        return;\par
+    \}\par
+    if (!/\\S+@\\S+\\.\\S+/.test(email)) \{\par
+        messageDiv.textContent = "Email is not valid.";\par
+        return;\par
+    \}\par
+    if (password.length < 6) \{\par
+        messageDiv.textContent = "Password must be at least 6 characters.";\par
+        return;\par
+    \}\par
+\par
+    messageDiv.textContent = "Registration successful!";\par
+    // You can proceed to send the data to the server here\par
+\}\par
+\par
+User Login Page(HTML)\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Login</title>\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <h1>Login</h1>\par
+    <form id="loginForm">\par
+        <input type="email" id="loginEmail" placeholder="Email" required>\par
+        <input type="password" id="loginPassword" placeholder="Password" required>\par
+        <button type="submit">Login</button>\par
+        <div id="loginMessage" class="error-message"></div>\par
+    </form>\par
+    <script src="script.js"></script>\par
+</body>\par
+</html>\par
+script.js\par
+document.getElementById("loginForm").addEventListener("submit", function(event) \{\par
+    event.preventDefault(); // Prevent form submission\par
+    validateLogin();\par
+\});\par
+\par
+function validateLogin() \{\par
+    const email = document.getElementById("loginEmail").value;\par
+    const password = document.getElementById("loginPassword").value;\par
+    const loginMessageDiv = document.getElementById("loginMessage");\par
+    loginMessageDiv.textContent = "";\par
+\par
+    // Simple validation\par
+    if (!/\\S+@\\S+\\.\\S+/.test(email)) \{\par
+        loginMessageDiv.textContent = "Email is not valid.";\par
+        return;\par
+    \}\par
+    if (password.length < 6) \{\par
+        loginMessageDiv.textContent = "Password must be at least 6 characters.";\par
+        return;\par
+    \}\par
+\par
+    loginMessageDiv.textContent = "Login successful!";\par
+    // You can proceed to authenticate the user here\par
+\}\par
+\par
+ User Profile Page(HTML)\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>User Profile</title>\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <h1>User Profile</h1>\par
+    <form id="profileForm">\par
+        <input type="text" id="profileUsername" placeholder="Username" required>\par
+        <input type="email" id="profileEmail" placeholder="Email" required>\par
+        <button type="submit">Update Profile</button>\par
+        <div id="profileMessage" class="error-message"></div>\par
+    </form>\par
+    <script src="script.js"></script>\par
+</body>\par
+</html>\par
+\par
+script.js\par
+document.getElementById("profileForm").addEventListener("submit", function(event) \{\par
+    event.preventDefault(); // Prevent form submission\par
+    validateProfile();\par
+\});\par
+\par
+function validateProfile() \{\par
+    const username = document.getElementById("profileUsername").value;\par
+    const email = document.getElementById("profileEmail").value;\par
+    const profileMessageDiv = document.getElementById("profileMessage");\par
+    profileMessageDiv.textContent = "";\par
+\par
+    // Simple validation\par
+    if (username.length < 3) \{\par
+        profileMessageDiv.textContent = "Username must be at least 3 characters.";\par
+        return;\par
+    \}\par
+    if (!/\\S+@\\S+\\.\\S+/.test(email)) \{\par
+        profileMessageDiv.textContent = "Email is not valid.";\par
+        return;\par
+    \}\par
+\par
+    profileMessageDiv.textContent = "Profile updated successfully!";\par
+    // You can proceed to update the user profile on the server here\par
+\}\par
+Payment page(HTML)\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Payment</title>\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <h1>Payment</h1>\par
+    <form id="paymentForm">\par
+        <input type="text" id="cardNumber" placeholder="Card Number" required>\par
+        <input type="text" id="expiryDate" placeholder="MM/YY" required>\par
+        <input type="text" id="cvv" placeholder="CVV" required>\par
+        <button type="submit">Pay</button>\par
+        <div id="paymentMessage" class="error-message"></div>\par
+    </form>\par
+    <script src="script.js"></script>\par
+</body>\par
+</html>\par
+\par
+script.js\par
+document.getElementById("paymentForm").addEventListener("submit", function(event) \{\par
+    event.preventDefault(); // Prevent form submission\par
+    validatePayment();\par
+\});\par
+\par
+function validatePayment() \{\par
+    const cardNumber = document.getElementById("cardNumber").value;\par
+    const expiryDate = document.getElementById("expiryDate").value;\par
+    const cvv = document.getElementById("cvv").value;\par
+    const paymentMessageDiv = document.getElementById("paymentMessage");\par
+    paymentMessageDiv.textContent = "";\par
+\par
+    // Simple validation\par
+    if (!/^\\d\{16\}$/.test(cardNumber)) \{\par
+        paymentMessageDiv.textContent = "Card number must be 16 digits.";\par
+        return;\par
+    \}\par
+    if (!/^(0[1-9]|1[0-2])\\/\\d\{2\}$/.test(expiryDate)) \{\par
+        paymentMessageDiv.textContent = "Expiry date must be in MM/YY format.";\par
+        return;\par
+    \}\par
+    if (!/^\\d\{3\}$/.test(cvv)) \{\par
+        paymentMessageDiv.textContent = "CVV must be 3 digits.";\par
+        return;\par
+    \}\par
+\par
+    paymentMessageDiv.textContent = "Payment successful!";\par
+    // You can proceed to process the payment here\par
+\}\par
+4.Build a scientific calculator\par
+HTML\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Scientific Calculator</title>\par
+    <link rel="stylesheet" href="styles.css">\par
+</head>\par
+<body>\par
+    <div class="calculator">\par
+        <input type="text" id="display" disabled>\par
+        <div class="buttons">\par
+            <button onclick="clearDisplay()">C</button>\par
+            <button onclick="appendToDisplay('7')">7</button>\par
+            <button onclick="appendToDisplay('8')">8</button>\par
+            <button onclick="appendToDisplay('9')">9</button>\par
+            <button onclick="appendToDisplay('/')">/</button>\par
+            <button onclick="appendToDisplay('4')">4</button>\par
+            <button onclick="appendToDisplay('5')">5</button>\par
+            <button onclick="appendToDisplay('6')">6</button>\par
+            <button onclick="appendToDisplay('*')">*</button>\par
+            <button onclick="appendToDisplay('1')">1</button>\par
+            <button onclick="appendToDisplay('2')">2</button>\par
+            <button onclick="appendToDisplay('3')">3</button>\par
+            <button onclick="appendToDisplay('-')">-</button>\par
+            <button onclick="appendToDisplay('0')">0</button>\par
+            <button onclick="appendToDisplay('.')">.</button>\par
+            <button onclick="calculate()">=</button>\par
+            <button onclick="appendToDisplay('+')">+</button>\par
+            <button onclick="calculate('sqrt')">\f1\u8730?\f0 </button>\par
+            <button onclick="calculate('pow')">x\'b2</button>\par
+            <button onclick="calculate('sin')">sin</button>\par
+            <button onclick="calculate('cos')">cos</button>\par
+            <button onclick="calculate('tan')">tan</button>\par
+        </div>\par
+    </div>\par
+    <script src="script.js"></script>\par
+</body>\par
+</html>\par
+CSS\par
+body\f2  \{\f0\par
+\f2     \f0 display\f2 : \f0 flex\f2 ;\f0\par
+\f2     \f0 justify\f2 -\f0 content\f2 : \f0 center\f2 ;\f0\par
+\f2     \f0 align\f2 -\f0 items\f2 : \f0 center\f2 ;\f0\par
+\f2     \f0 height\f2 : \f0 100vh\f2 ;\f0\par
+\f2     \f0 background\f2 -\f0 color\f2 : #\f0 f4f4f4\f2 ;\f0\par
+\f2     \f0 font\f2 -\f0 family\f2 : \f0 Arial\f2 , \f0 sans\f2 -\f0 serif\f2 ;\f0\par
+\f2\}\f0\par
+\par
+\f2 .\f0 calculator\f2  \{\f0\par
+\f2     \f0 background\f2 -\f0 color\f2 : \f0 white\f2 ;\f0\par
+\f2     \f0 border\f2 -\f0 radius\f2 : \f0 10px\f2 ;\f0\par
+\f2     \f0 box\f2 -\f0 shadow\f2 : \f0 0\f2  \f0 0\f2  \f0 10px\f2  \f0 rgba\f2 (\f0 0\f2 , \f0 0\f2 , \f0 0\f2 , \f0 0\f2 .\f0 1\f2 );\f0\par
+\f2     \f0 padding\f2 : \f0 20px\f2 ;\f0\par
+\f2     \f0 width\f2 : \f0 300px\f2 ;\f0\par
+\f2\}\f0\par
+\par
+\f2 #\f0 display\f2  \{\f0\par
+\f2     \f0 width\f2 : \f0 100%\f2 ;\f0\par
+\f2     \f0 height\f2 : \f0 40px\f2 ;\f0\par
+\f2     \f0 text\f2 -\f0 align\f2 : \f0 right\f2 ;\f0\par
+\f2     \f0 font\f2 -\f0 size\f2 : \f0 24px\f2 ;\f0\par
+\f2     \f0 border\f2 : \f0 1px\f2  \f0 solid\f2  #\f0 ccc\f2 ;\f0\par
+\f2     \f0 border\f2 -\f0 radius\f2 : \f0 5px\f2 ;\f0\par
+\f2     \f0 margin\f2 -\f0 bottom\f2 : \f0 10px\f2 ;\f0\par
+\f2     \f0 padding\f2 : \f0 5px\f2 ;\f0\par
+\f2\}\f0\par
+\par
+\f2 .\f0 buttons\f2  \{\f0\par
+\f2     \f0 display\f2 : \f0 grid\f2 ;\f0\par
+\f2     \f0 grid\f2 -\f0 template\f2 -\f0 columns\f2 : \f0 repeat\f2 (\f0 4\f2 , \f0 1fr\f2 );\f0\par
+\f2     \f0 gap\f2 : \f0 10px\f2 ;\f0\par
+\f2\}\f0\par
+\par
+button\f2  \{\f0\par
+\f2     \f0 height\f2 : \f0 40px\f2 ;\f0\par
+\f2     \f0 font\f2 -\f0 size\f2 : \f0 18px\f2 ;\f0\par
+\f2     \f0 border\f2 : \f0 none\f2 ;\f0\par
+\f2     \f0 border\f2 -\f0 radius\f2 : \f0 5px\f2 ;\f0\par
+\f2     \f0 background\f2 -\f0 color\f2 : #\f0 007bff\f2 ;\f0\par
+\f2     \f0 color\f2 : \f0 white\f2 ;\f0\par
+\f2     \f0 cursor\f2 : \f0 pointer\f2 ;\f0\par
+\f2     \f0 transition\f2 : \f0 background\f2 -\f0 color\f2  \f0 0\f2 .\f0 3s\f2 ;\f0\par
+\f2\}\f0\par
+\par
+button\f2 :\f0 hover\f2  \{\f0\par
+\f2     \f0 background\f2 -\f0 color\f2 : #\f0 0056b3\f2 ;\f0\par
+\f2\}\f0\par
+script.js\par
+function\f2  \f0 appendToDisplay\f2 (\f0 value\f2 ) \{\f0\par
+\f2     \f0 document\f2 .\f0 getElementById\f2 (\f0 "display"\f2 ).\f0 value\f2  += \f0 value\f2 ;\f0\par
+\f2\}\f0\par
+\par
+function\f2  \f0 clearDisplay\f2 () \{\f0\par
+\f2     \f0 document\f2 .\f0 getElementById\f2 (\f0 "display"\f2 ).\f0 value\f2  = \f0 ""\f2 ;\f0\par
+\f2\}\f0\par
+\par
+function\f2  \f0 calculate\f2 (\f0 operation\f2 ) \{\f0\par
+\f2     \f0 const\f2  \f0 display\f2  = \f0 document\f2 .\f0 getElementById\f2 (\f0 "display"\f2 );\f0\par
+\f2     \f0 let\f2  \f0 result\f2 ;\f0\par
+\par
+\f2     \f0 try\f2  \{\f0\par
+\f2         \f0 if\f2  (\f0 operation\f2  === \f0 'sqrt'\f2 ) \{\f0\par
+\f2             \f0 result\f2  = \f0 Math\f2 .\f0 sqrt\f2 (\f0 eval\f2 (\f0 display\f2 .\f0 value\f2 ));\f0\par
+\f2         \} \f0 else\f2  \f0 if\f2  (\f0 operation\f2  === \f0 'pow'\f2 ) \{\f0\par
+\f2             \f0 result\f2  = \f0 Math\f2 .\f0 pow\f2 (\f0 eval\f2 (\f0 display\f2 .\f0 value\f2 ), \f0 2\f2 );\f0\par
+\f2         \} \f0 else\f2  \f0 if\f2  ([\f0 'sin'\f2 , \f0 'cos'\f2 , \f0 'tan'\f2 ].\f0 includes\f2 (\f0 operation\f2 )) \{\f0\par
+\f2             \f0 const\f2  \f0 angle\f2  = \f0 eval\f2 (\f0 display\f2 .\f0 value\f2 ) \f0 *\f2  (\f0 Math\f2 .\f0 PI\f2  / \f0 180\f2 ); // \f0 Convert\f2  \f0 to\f2  \f0 radians\par
+\f2             \f0 result\f2  = \f0 Math\f2 [\f0 operation\f2 ](\f0 angle\f2 );\f0\par
+\f2         \} \f0 else\f2  \{\f0\par
+\f2             \f0 result\f2  = \f0 eval\f2 (\f0 display\f2 .\f0 value\f2 );\f0\par
+\f2         \}\f0\par
+\par
+\f2         \f0 display\f2 .\f0 value\f2  = \f0 result\f2 ;\f0\par
+\f2     \} \f0 catch\f2  (\f0 error\f2 ) \{\f0\par
+\f2         \f0 display\f2 .\f0 value\f2  = \f0 "Error\f2 !\f0 "\f2 ;\f0\par
+\f2     \}\f0\par
+\f2\}\f0\par
+5.Javascript\f2  \f0 program\f2  \f0 to\f2  \f0 demostrate\f2  \f0 working\f2  \f0 of\f2  \f0 prototypal\f2  \f0 inheritance\f2  ,\f0 closure\f2 ,\f0 callbacks\f2 ,\f0 promises\f2  \f0 and\f2  \f0 sync\f2 /\f0 await\par
+\f2 // \f0 Prototypal\f2  \f0 Inheritance\par
+function\f2  \f0 Animal\f2 (\f0 name\f2 ) \{\f0\par
+\f2     \f0 this\f2 .\f0 name\f2  = \f0 name\f2 ;\f0\par
+\f2\}\f0\par
+\par
+Animal\f2 .\f0 prototype\f2 .\f0 speak\f2  = \f0 function\f2 () \{\f0\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 `$\f2\{\f0 this\f2 .\f0 name\f2\} \f0 makes\f2  \f0 a\f2  \f0 noise\f2 .\f0 `\f2 );\f0\par
+\f2\};\f0\par
+\par
+function\f2  \f0 Dog\f2 (\f0 name\f2 ) \{\f0\par
+\f2     \f0 Animal\f2 .\f0 call\f2 (\f0 this\f2 , \f0 name\f2 ); // \f0 Call\f2  \f0 the\f2  \f0 parent\f2  \f0 constructor\par
+\f2\}\f0\par
+\par
+Dog\f2 .\f0 prototype\f2  = \f0 Object\f2 .\f0 create\f2 (\f0 Animal\f2 .\f0 prototype\f2 );\f0\par
+Dog\f2 .\f0 prototype\f2 .\f0 constructor\f2  = \f0 Dog\f2 ;\f0\par
+\par
+Dog\f2 .\f0 prototype\f2 .\f0 speak\f2  = \f0 function\f2 () \{\f0\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 `$\f2\{\f0 this\f2 .\f0 name\f2\} \f0 barks\f2 .\f0 `\f2 );\f0\par
+\f2\};\f0\par
+\par
+\f2 // \f0 Closure\par
+function\f2  \f0 createCounter\f2 () \{\f0\par
+\f2     \f0 let\f2  \f0 count\f2  = \f0 0\f2 ; // \f0 Private\f2  \f0 variable\par
+\par
+\f2     \f0 return\f2  \{\f0\par
+\f2         \f0 increment\f2 : \f0 function\f2 () \{\f0\par
+\f2             \f0 count\f2 ++;\f0\par
+\f2             \f0 return\f2  \f0 count\f2 ;\f0\par
+\f2         \},\f0\par
+\f2         \f0 decrement\f2 : \f0 function\f2 () \{\f0\par
+\f2             \f0 count\f2 --;\f0\par
+\f2             \f0 return\f2  \f0 count\f2 ;\f0\par
+\f2         \},\f0\par
+\f2         \f0 getCount\f2 : \f0 function\f2 () \{\f0\par
+\f2             \f0 return\f2  \f0 count\f2 ;\f0\par
+\f2         \}\f0\par
+\f2     \};\f0\par
+\f2\}\f0\par
+\par
+\f2 // \f0 Callback\par
+function\f2  \f0 fetchData\f2 (\f0 callback\f2 ) \{\f0\par
+\f2     \f0 setTimeout\f2 (() => \{\f0\par
+\f2         \f0 const\f2  \f0 data\f2  = \{ \f0 message\f2 : \f0 "Data\f2  \f0 fetched\f2 !\f0 "\f2  \};\f0\par
+\f2         \f0 callback\f2 (\f0 data\f2 );\f0\par
+\f2     \}, \f0 1000\f2 );\f0\par
+\f2\}\f0\par
+\par
+\f2 // \f0 Promise\par
+function\f2  \f0 fetchDataPromise\f2 () \{\f0\par
+\f2     \f0 return\f2  \f0 new\f2  \f0 Promise\f2 ((\f0 resolve\f2 , \f0 reject\f2 ) => \{\f0\par
+\f2         \f0 setTimeout\f2 (() => \{\f0\par
+\f2             \f0 const\f2  \f0 data\f2  = \{ \f0 message\f2 : \f0 "Data\f2  \f0 fetched\f2  \f0 with\f2  \f0 Promise\f2 !\f0 "\f2  \};\f0\par
+\f2             \f0 resolve\f2 (\f0 data\f2 );\f0\par
+\f2         \}, \f0 1000\f2 );\f0\par
+\f2     \});\f0\par
+\f2\}\f0\par
+\par
+\f2 // \f0 Async\f2 /\f0 Await\par
+async\f2  \f0 function\f2  \f0 fetchDataAsync\f2 () \{\f0\par
+\f2     \f0 const\f2  \f0 data\f2  = \f0 await\f2  \f0 fetchDataPromise\f2 ();\f0\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 data\f2 .\f0 message\f2 );\f0\par
+\f2\}\f0\par
+\par
+\f2 // \f0 Demonstration\par
+function\f2  \f0 demo\f2 () \{\f0\par
+\f2     // \f0 Prototypal\f2  \f0 Inheritance\par
+\f2     \f0 const\f2  \f0 dog\f2  = \f0 new\f2  \f0 Dog\f2 (\f0 'Buddy'\f2 );\f0\par
+\f2     \f0 dog\f2 .\f0 speak\f2 (); // \f0 Output\f2 : \f0 Buddy\f2  \f0 barks\f2 .\f0\par
+\par
+\f2     // \f0 Closure\par
+\f2     \f0 const\f2  \f0 counter\f2  = \f0 createCounter\f2 ();\f0\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 counter\f2 .\f0 increment\f2 ()); // \f0 Output\f2 : \f0 1\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 counter\f2 .\f0 increment\f2 ()); // \f0 Output\f2 : \f0 2\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 counter\f2 .\f0 decrement\f2 ()); // \f0 Output\f2 : \f0 1\par
+\f2     \f0 console\f2 .\f0 log\f2 (\f0 counter\f2 .\f0 getCount\f2 ()); // \f0 Output\f2 : \f0 1\par
+\par
+\f2     // \f0 Callback\par
+\f2     \f0 fetchData\f2 ((\f0 data\f2 ) => \{\f0\par
+\f2         \f0 console\f2 .\f0 log\f2 (\f0 data\f2 .\f0 message\f2 ); // \f0 Output\f2 : \f0 Data\f2  \f0 fetched\f2 !\f0\par
+\f2     \});\f0\par
+\par
+\f2     // \f0 Promise\par
+\f2     \f0 fetchDataPromise\f2 ().\f0 then\f2 ((\f0 data\f2 ) => \{\f0\par
+\f2         \f0 console\f2 .\f0 log\f2 (\f0 data\f2 .\f0 message\f2 ); // \f0 Output\f2 : \f0 Data\f2  \f0 fetched\f2  \f0 with\f2  \f0 Promise\f2 !\f0\par
+\f2     \});\f0\par
+\par
+\f2     // \f0 Async\f2 /\f0 Await\par
+\f2     \f0 fetchDataAsync\f2 (); // \f0 Output\f2 : \f0 Data\f2  \f0 fetched\f2  \f0 with\f2  \f0 Promise\f2 !\f0\par
+\f2\}\f0\par
+\par
+\f2 // \f0 Run\f2  \f0 the\f2  \f0 demonstration\par
+demo\f2 ();\f0\par
+\par
+6.Write\f2  \f0 an\f2  \f0 xml\f2  \f0 file\f2  \f0 which\f2  \f0 will\f2  \f0 display\f2  \f0 the\f2  \f0 Book\f2  \f0 information\f2  \f0 with\f2  \f0 the\f2  \f0 following\f2  \f0 fields\f2  : \f0 Title\f2  \f0 of\f2  \f0 the\f2  \f0 book\f2 ,\f0 Author\f2  \f0 name\f2 ,\f0 ISBN\f2  \f0 number\f2  ,\f0 Publisher\f2  \f0 name\f2 ,\f0 Edition\f2 ,\f0 Price.\par
+\f2 <?\f0 xml\f2  \f0 version\f2 =\f0 "1\f2 .\f0 0"\f2  \f0 encoding\f2 =\f0 "UTF\f2 -\f0 8"\f2 ?>\f0\par
+\f2 <\f0 library\f2 >\f0\par
+\f2     <\f0 book\f2 >\f0\par
+\f2         <\f0 title\f2 >\f0 The\f2  \f0 Great\f2  \f0 Gatsby\f2 </\f0 title\f2 >\f0\par
+\f2         <\f0 author\f2 >\f0 F\f2 . \f0 Scott\f2  \f0 Fitzgerald\f2 </\f0 author\f2 >\f0\par
+\f2         <\f0 isbn\f2 >\f0 978\f2 -\f0 0743273565\f2 </\f0 isbn\f2 >\f0\par
+\f2         <\f0 publisher\f2 >\f0 Scribner\f2 </\f0 publisher\f2 >\f0\par
+\f2         <\f0 edition\f2 >\f0 1st\f2 </\f0 edition\f2 >\f0\par
+\f2         <\f0 price\f2 >\f0 10\f2 .\f0 99\f2 </\f0 price\f2 >\f0\par
+\f2     </\f0 book\f2 >\f0\par
+\f2     <\f0 book\f2 >\f0\par
+\f2         <\f0 title\f2 >\f0 To\f2  \f0 Kill\f2  \f0 a\f2  \f0 Mockingbird\f2 </\f0 title\f2 >\f0\par
+\f2         <\f0 author\f2 >\f0 Harper\f2  \f0 Lee\f2 </\f0 author\f2 >\f0\par
+\f2         <\f0 isbn\f2 >\f0 978\f2 -\f0 0061120084\f2 </\f0 isbn\f2 >\f0\par
+\f2         <\f0 publisher\f2 >\f0 Harper\f2  \f0 Perennial\f2  \f0 Modern\f2  \f0 Classics\f2 </\f0 publisher\f2 >\f0\par
+\f2         <\f0 edition\f2 >\f0 50th\f2  \f0 Anniversary\f2  \f0 Edition\f2 </\f0 edition\f2 >\f0\par
+\f2         <\f0 price\f2 >\f0 7\f2 .\f0 19\f2 </\f0 price\f2 >\f0\par
+\f2     </\f0 book\f2 >\f0\par
+\f2     <\f0 book\f2 >\f0\par
+\f2         <\f0 title\f2 >\f0 1984\f2 </\f0 title\f2 >\f0\par
+\f2         <\f0 author\f2 >\f0 George\f2  \f0 Orwell\f2 </\f0 author\f2 >\f0\par
+\f2         <\f0 isbn\f2 >\f0 978\f2 -\f0 0451524935\f2 </\f0 isbn\f2 >\f0\par
+\f2         <\f0 publisher\f2 >\f0 Signet\f2  \f0 Classics\f2 </\f0 publisher\f2 >\f0\par
+\f2         <\f0 edition\f2 >\f0 Anniversary\f2  \f0 Edition\f2 </\f0 edition\f2 >\f0\par
+\f2         <\f0 price\f2 >\f0 9\f2 .\f0 99\f2 </\f0 price\f2 >\f0\par
+\f2     </\f0 book\f2 >\f0\par
+\f2     <\f0 book\f2 >\f0\par
+\f2         <\f0 title\f2 >\f0 Moby\f2  \f0 Dick\f2 </\f0 title\f2 >\f0\par
+\f2         <\f0 author\f2 >\f0 Herman\f2  \f0 Melville\f2 </\f0 author\f2 >\f0\par
+\f2         <\f0 isbn\f2 >\f0 978\f2 -\f0 1503280786\f2 </\f0 isbn\f2 >\f0\par
+\f2         <\f0 publisher\f2 >\f0 CreateSpace\f2  \f0 Independent\f2  \f0 Publishing\f2  \f0 Platform\f2 </\f0 publisher\f2 >\f0\par
+\f2         <\f0 edition\f2 >\f0 1st\f2 </\f0 edition\f2 >\f0\par
+\f2         <\f0 price\f2 >\f0 11\f2 .\f0 95\f2 </\f0 price\f2 >\f0\par
+\f2     </\f0 book\f2 >\f0\par
+\f2     <\f0 book\f2 >\f0\par
+\f2         <\f0 title\f2 >\f0 Brave\f2  \f0 New\f2  \f0 World\f2 </\f0 title\f2 >\f0\par
+\f2         <\f0 author\f2 >\f0 Aldous\f2  \f0 Huxley\f2 </\f0 author\f2 >\f0\par
+\f2         <\f0 isbn\f2 >\f0 978\f2 -\f0 0060850524\f2 </\f0 isbn\f2 >\f0\par
+\f2         <\f0 publisher\f2 >\f0 Harper\f2  \f0 Perennial\f2  \f0 Modern\f2  \f0 Classics\f2 </\f0 publisher\f2 >\f0\par
+\f2         <\f0 edition\f2 >\f0 Reissue\f2 </\f0 edition\f2 >\f0\par
+\f2         <\f0 price\f2 >\f0 14\f2 .\f0 99\f2 </\f0 price\f2 >\f0\par
+\f2     </\f0 book\f2 >\f0\par
+\f2 </\f0 library\f2 >\f0\par
+\par
+7.Define\f2  \f0 a\f2  \f0 Document\f2  \f0 Type\f2  \f0 Definition\f2 (\f0 DTD\f2 ) \f0 and\f2  \f0 xml\f2  \f0 schema\f2  \f0 to\f2  \f0 validate\f2  \f0 the\f2  \f0 above\f2  \f0 created\f2  \f0 xml\f2  \f0 Documents\par
+books.dtd\par
+\f2 <!\f0 ELEMENT\f2  \f0 library\f2  (\f0 book\f2 +)>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 book\f2  (\f0 title\f2 , \f0 author\f2 , \f0 isbn\f2 , \f0 publisher\f2 , \f0 edition\f2 , \f0 price\f2 )>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 title\f2  (#\f0 PCDATA\f2 )>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 author\f2  (#\f0 PCDATA\f2 )>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 isbn\f2  (#\f0 PCDATA\f2 )>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 publisher\f2  (#\f0 PCDATA\f2 )>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 edition\f2  (#\f0 PCDATA\f2 )>\f0\par
+\f2 <!\f0 ELEMENT\f2  \f0 price\f2  (#\f0 PCDATA\f2 )>\par
+books.xsd\par
+<?xml version="1.0" encoding="UTF-8"?>\par
+<xs:schema xmlns:xs="{{\field{\*\fldinst{HYPERLINK http://www.w3.org/2001/XMLSchema }}{\fldrslt{http://www.w3.org/2001/XMLSchema\ul0\cf0}}}}\f2\fs22 ">\par
+\par
+    <xs:element name="library">\par
+        <xs:complexType>\par
+            <xs:sequence>\par
+                <xs:element name="book" maxOccurs="unbounded">\par
+                    <xs:complexType>\par
+                        <xs:sequence>\par
+                            <xs:element name="title" type="xs:string"/>\par
+                            <xs:element name="author" type="xs:string"/>\par
+                            <xs:element name="isbn" type="xs:string"/>\par
+                            <xs:element name="publisher" type="xs:string"/>\par
+                            <xs:element name="edition" type="xs:string"/>\par
+                            <xs:element name="price" type="xs:decimal"/>\par
+                        </xs:sequence>\par
+                    </xs:complexType>\par
+                </xs:element>\par
+            </xs:sequence>\par
+        </xs:complexType>\par
+    </xs:element>\par
+\par
+</xs:schema>\par
+8.8.write a java program to establish a connection to a database and execute simple SQL queries\par
+SQL\par
+use itb;\par
+create table students(name varchar(50),rollno int,branch varchar(20));\par
+insert into students (name,rollno,branch) values\par
+('niha',90,'it'),\par
+('nishka',95,'it'),\par
+('nishu',96,'it');\par
+JAVA\par
+
+\pard\sa200\sl276\slmult1\cf2\b\f3\fs20 package\cf3\b0  jdbc;\cf0\par
+\cf2\b import\cf3\b0  java.sql.*;\cf0\par
+\cf2\b public\cf3\b0  \cf2\b class\cf3\b0  Simple_Connection \{\cf0\par
+\cf3\tab Connection \cf4 conn\cf3  = \cf2\b null\cf3\b0 ;\cf0\par
+\cf3\tab\cf2\b public\cf3\b0  \cf2\b static\cf3\b0  \cf2\b void\cf3\b0  main(String[] \cf5 args\cf3 ) \{\cf0\par
+\cf3\tab\tab\cf6 // \cf7\b TODO\cf6\b0  Auto-generated method stub\cf0\par
+\cf3\tab\tab\cf2\b try\cf3\b0  \{\cf0\par
+\cf3\tab\tab\tab Class.\i forName\i0 (\cf8 "com.mysql.cj.jdbc.Driver"\cf3 );\cf0\par
+\cf3\tab\tab\tab Connection \cf5 conn\cf3  = DriverManager.\i getConnection\i0 (\cf8 "jdbc:mysql://localhost:3306/itb"\cf3 ,\cf8 "root"\cf3 ,\cf8 "root"\cf3 );\cf0\par
+\cf3\tab\tab\tab Statement \cf5 stmt\cf3   = \cf5 conn\cf3 .createStatement();\cf0\par
+\cf3\tab\tab\tab ResultSet \cf5 rs\cf3 =\cf5 stmt\cf3 .executeQuery(\cf8 "Select * from students"\cf3 );\cf0\par
+\cf3\tab\tab\tab\cf2\b while\cf3\b0 (\cf5 rs\cf3 .next())\{\cf0\par
+\cf3\tab\tab\tab\tab\tab System.\cf4\b\i out\cf3\b0\i0 .println(\cf5 rs\cf3 .getString(1)+\cf8 " "\cf3 +\cf5 rs\cf3 .getInt(2)+\cf8 " "\cf3 +\cf5 rs\cf3 .getString(3));\cf0\par
+\cf3\tab\tab\tab\}\cf0\par
+\cf3\tab\tab\tab\cf5 conn\cf3 .close();\cf0\par
+\cf3\tab\tab\tab\cf0\par
+\cf3\tab\tab\}\cf2\b catch\cf3\b0 (Exception \cf5 e\cf3 ) \{\cf0\par
+\cf3\tab\tab\tab\cf5 e\cf3 .printStackTrace();\cf0\par
+\cf3\tab\tab\}\cf0\par
+\cf3\tab\}\cf0\par
+
+\pard\sa200\sl276\slmult1\qj\cf3\}\par
+\cf0\f2\fs22 9.write a java program to demonstrate the usage of JDBC in performing various DML statements .Use prepared statements and callable statements\par
+SQL\par
+CREATE DATABASE sampledb;\par
+\par
+USE sampledb;\par
+\par
+CREATE TABLE users (\par
+    id INT AUTO_INCREMENT PRIMARY KEY,\par
+    name VARCHAR(100),\par
+    email VARCHAR(100)\par
+);\par
+JAVA\par
+import java.sql.Connection;\par
+import java.sql.DriverManager;\par
+import java.sql.PreparedStatement;\par
+import java.sql.SQLException;\par
+import java.sql.CallableStatement;\par
+import java.sql.ResultSet;\par
+\par
+public class JdbcDmlExample \{\par
+\par
+    private static final String URL = "jdbc:mysql://localhost:3306/sampledb";\par
+    private static final String USERNAME = "your_username"; // Replace with your DB username\par
+    private static final String PASSWORD = "your_password"; // Replace with your DB password\par
+\par
+    public static void main(String[] args) \{\par
+        Connection connection = null;\par
+\par
+        try \{\par
+            // Establishing the connection\par
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);\par
+            System.out.println("Connected to the database successfully.");\par
+\par
+            // Inserting data using PreparedStatement\par
+            insertUser(connection, "Alice Johnson", "alice@example.com");\par
+            insertUser(connection, "Bob Smith", "bob@example.com");\par
+\par
+            // Updating data using PreparedStatement\par
+            updateUserEmail(connection, 1, "alice.new@example.com");\par
+\par
+            // Calling stored procedure using CallableStatement\par
+            callUserCountProcedure(connection);\par
+\par
+        \} catch (SQLException e) \{\par
+            System.err.println("SQL Exception: " + e.getMessage());\par
+        \} finally \{\par
+            // Closing the connection\par
+            try \{\par
+                if (connection != null && !connection.isClosed()) \{\par
+                    connection.close();\par
+                    System.out.println("Database connection closed.");\par
+                \}\par
+            \} catch (SQLException e) \{\par
+                System.err.println("Failed to close the connection: " + e.getMessage());\par
+            \}\par
+        \}\par
+    \}\par
+\par
+    // Method to insert user using PreparedStatement\par
+    private static void insertUser(Connection connection, String name, String email) throws SQLException \{\par
+        String insertSQL = "INSERT INTO users (name, email) VALUES (?, ?)";\par
+        try (PreparedStatement pstmt = connection.prepareStatement(insertSQL)) \{\par
+            pstmt.setString(1, name);\par
+            pstmt.setString(2, email);\par
+            int rowsAffected = pstmt.executeUpdate();\par
+            System.out.println(rowsAffected + " user(s) inserted.");\par
+        \}\par
+    \}\par
+\par
+    // Method to update user email using PreparedStatement\par
+    private static void updateUserEmail(Connection connection, int userId, String newEmail) throws SQLException \{\par
+        String updateSQL = "UPDATE users SET email = ? WHERE id = ?";\par
+        try (PreparedStatement pstmt = connection.prepareStatement(updateSQL)) \{\par
+            pstmt.setString(1, newEmail);\par
+            pstmt.setInt(2, userId);\par
+            int rowsAffected = pstmt.executeUpdate();\par
+            System.out.println(rowsAffected + " user(s) updated.");\par
+        \}\par
+    \}\par
+\par
+    // Method to call a stored procedure using CallableStatement\par
+    private static void callUserCountProcedure(Connection connection) throws SQLException \{\par
+        // Assuming there is a stored procedure named `GetUserCount` that returns the count of users\par
+        String procedureCall = "\{ CALL GetUserCount() \}";\par
+        try (CallableStatement cstmt = connection.prepareCall(procedureCall)) \{\par
+            try (ResultSet rs = cstmt.executeQuery()) \{\par
+                if (rs.next()) \{\par
+                    int userCount = rs.getInt(1);\par
+                    System.out.println("Total users: " + userCount);\par
+                \}\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+10.write a java based application to demonstrate the Updatable and Scrollable resultsets \par
+SQL\par
+CREATE DATABASE sampledb;\par
+\par
+USE sampledb;\par
+\par
+CREATE TABLE users (\par
+    id INT AUTO_INCREMENT PRIMARY KEY,\par
+    name VARCHAR(100),\par
+    email VARCHAR(100)\par
+);\par
+JAVA\par
+import java.sql.Connection;\par
+import java.sql.DriverManager;\par
+import java.sql.ResultSet;\par
+import java.sql.SQLException;\par
+import java.sql.Statement;\par
+import java.sql.PreparedStatement;\par
+\par
+public class UpdatableScrollableResultSetExample \{\par
+    private static final String URL = "jdbc:mysql://localhost:3306/sampledb";\par
+    private static final String USERNAME = "your_username"; // Replace with your DB username\par
+    private static final String PASSWORD = "your_password"; // Replace with your DB password\par
+\par
+    public static void main(String[] args) \{\par
+        Connection connection = null;\par
+\par
+        try \{\par
+            // Establishing the connection\par
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);\par
+            System.out.println("Connected to the database successfully.");\par
+\par
+            // Inserting some sample data\par
+            insertSampleData(connection);\par
+\par
+            // Using Updatable and Scrollable ResultSet\par
+            try (Statement stmt = connection.createStatement(\par
+                    ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) \{\par
+                \par
+                String query = "SELECT * FROM users";\par
+                ResultSet rs = stmt.executeQuery(query);\par
+\par
+                // Moving to the last record\par
+                if (rs.last()) \{\par
+                    System.out.println("Last Record: ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") + ", Email: " + rs.getString("email"));\par
+                \}\par
+\par
+                // Moving to the first record\par
+                if (rs.first()) \{\par
+                    System.out.println("First Record: ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") + ", Email: " + rs.getString("email"));\par
+                \}\par
+\par
+                // Updating the first record\par
+                if (rs.first()) \{\par
+                    System.out.println("Updating record...");\par
+                    rs.updateString("name", "Updated Name");\par
+                    rs.updateRow();\par
+                    System.out.println("Record updated.");\par
+                \}\par
+\par
+                // Displaying updated records\par
+                System.out.println("Updated Records:");\par
+                rs.beforeFirst(); // Move cursor to before the first record\par
+                while (rs.next()) \{\par
+                    System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") + ", Email: " + rs.getString("email"));\par
+                \}\par
+\par
+            \}\par
+\par
+        \} catch (SQLException e) \{\par
+            System.err.println("SQL Exception: " + e.getMessage());\par
+        \} finally \{\par
+            // Closing the connection\par
+            try \{\par
+                if (connection != null && !connection.isClosed()) \{\par
+                    connection.close();\par
+                    System.out.println("Database connection closed.");\par
+                \}\par
+            \} catch (SQLException e) \{\par
+                System.err.println("Failed to close the connection: " + e.getMessage());\par
+            \}\par
+        \}\par
+    \}\par
+\par
+    // Method to insert sample data into the users table\par
+    private static void insertSampleData(Connection connection) throws SQLException \{\par
+        String insertSQL = "INSERT INTO users (name, email) VALUES (?, ?)";\par
+        try (PreparedStatement pstmt = connection.prepareStatement(insertSQL)) \{\par
+            pstmt.setString(1, "John Doe");\par
+            pstmt.setString(2, "john@example.com");\par
+            pstmt.executeUpdate();\par
+            pstmt.setString(1, "Jane Smith");\par
+            pstmt.setString(2, "jane@example.com");\par
+            pstmt.executeUpdate();\par
+            System.out.println("Sample data inserted into users table.");\par
+        \}\par
+    \}\par
+\}\par
+11.write a java program to access metadata of the SQL database\par
+import java.sql.Connection;\par
+import java.sql.DriverManager;\par
+import java.sql.DatabaseMetaData;\par
+import java.sql.ResultSet;\par
+import java.sql.SQLException;\par
+\par
+public class DatabaseMetadataExample \{\par
+    private static final String URL = "jdbc:mysql://localhost:3306/sampledb"; // Replace with your DB URL\par
+    private static final String USERNAME = "your_username"; // Replace with your DB username\par
+    private static final String PASSWORD = "your_password"; // Replace with your DB password\par
+\par
+    public static void main(String[] args) \{\par
+        Connection connection = null;\par
+\par
+        try \{\par
+            // Establishing the connection\par
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);\par
+            System.out.println("Connected to the database successfully.");\par
+\par
+            // Accessing database metadata\par
+            DatabaseMetaData metaData = connection.getMetaData();\par
+\par
+            // Retrieve and display basic information\par
+            System.out.println("Database Product Name: " + metaData.getDatabaseProductName());\par
+            System.out.println("Database Product Version: " + metaData.getDatabaseProductVersion());\par
+            System.out.println("Driver Name: " + metaData.getDriverName());\par
+            System.out.println("Driver Version: " + metaData.getDriverVersion());\par
+            System.out.println("SQL Syntax: " + metaData.getSQLKeywords());\par
+\par
+            // Get and display the tables\par
+            System.out.println("\\nTables in the database:");\par
+            ResultSet tables = metaData.getTables(null, null, "%", new String[]\{"TABLE"\});\par
+            while (tables.next()) \{\par
+                String tableName = tables.getString("TABLE_NAME");\par
+                System.out.println("Table: " + tableName);\par
+\par
+                // Get and display columns for each table\par
+                ResultSet columns = metaData.getColumns(null, null, tableName, null);\par
+                System.out.println("  Columns in " + tableName + ":");\par
+                while (columns.next()) \{\par
+                    String columnName = columns.getString("COLUMN_NAME");\par
+                    String columnType = columns.getString("TYPE_NAME");\par
+                    int columnSize = columns.getInt("COLUMN_SIZE");\par
+                    System.out.printf("    %s (%s, Size: %d)%n", columnName, columnType, columnSize);\par
+                \}\par
+            \}\par
+\par
+        \} catch (SQLException e) \{\par
+            System.err.println("SQL Exception: " + e.getMessage());\par
+        \} finally \{\par
+            // Closing the connection\par
+            try \{\par
+                if (connection != null && !connection.isClosed()) \{\par
+                    connection.close();\par
+                    System.out.println("Database connection closed.");\par
+                \}\par
+            \} catch (SQLException e) \{\par
+                System.err.println("Failed to close the connection: " + e.getMessage());\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+12. write a java program to accept request parameters a form  and generate the response\par
+HTML\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>User Form</title>\par
+</head>\par
+<body>\par
+    <h1>User Information Form</h1>\par
+    <form action="ResponseServlet" method="POST">\par
+        <label for="name">Name:</label><br>\par
+        <input type="text" id="name" name="name" required><br>\par
+        \par
+        <label for="email">Email:</label><br>\par
+        <input type="email" id="email" name="email" required><br>\par
+        \par
+        <input type="submit" value="Submit">\par
+    </form>\par
+</body>\par
+</html>\par
+ResponseServlet.java\par
+import java.io.IOException;\par
+import java.io.PrintWriter;\par
+import javax.servlet.ServletException;\par
+import javax.servlet.annotation.WebServlet;\par
+import javax.servlet.http.HttpServlet;\par
+import javax.servlet.http.HttpServletRequest;\par
+import javax.servlet.http.HttpServletResponse;\par
+\par
+@WebServlet("/ResponseServlet")\par
+public class ResponseServlet extends HttpServlet \{\par
+    private static final long serialVersionUID = 1L;\par
+\par
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException \{\par
+        // Set the response content type\par
+        response.setContentType("text/html");\par
+\par
+        // Get the parameters from the request\par
+        String name = request.getParameter("name");\par
+        String email = request.getParameter("email");\par
+\par
+        // Generate the response\par
+        PrintWriter out = response.getWriter();\par
+        out.println("<html><body>");\par
+        out.println("<h2>User Information</h2>");\par
+        out.println("<p>Name: " + name + "</p>");\par
+        out.println("<p>Email: " + email + "</p>");\par
+        out.println("</body></html>");\par
+    \}\par
+\}\par
+\par
+13.write a program to accept ServletConfig and ServletContext parameters\par
+import java.io.IOException;\par
+import java.io.PrintWriter;\par
+import javax.servlet.ServletConfig;\par
+import javax.servlet.ServletContext;\par
+import javax.servlet.ServletException;\par
+import javax.servlet.annotation.WebServlet;\par
+import javax.servlet.http.HttpServlet;\par
+import javax.servlet.http.HttpServletRequest;\par
+import javax.servlet.http.HttpServletResponse;\par
+\par
+@WebServlet("/ConfigServlet")\par
+public class ConfigServlet extends HttpServlet \{\par
+    private static final long serialVersionUID = 1L;\par
+\par
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException \{\par
+        // Set the response content type\par
+        response.setContentType("text/html");\par
+\par
+        // Get ServletConfig and ServletContext\par
+        ServletConfig config = getServletConfig();\par
+        ServletContext context = getServletContext();\par
+\par
+        // Get parameters from ServletConfig\par
+        String servletParam = config.getInitParameter("servletParam");\par
+        \par
+        // Get parameters from ServletContext\par
+        String contextParam = context.getInitParameter("contextParam");\par
+\par
+        // Generate the response\par
+        PrintWriter out = response.getWriter();\par
+        out.println("<html><body>");\par
+        out.println("<h2>Servlet Config and Context Parameters</h2>");\par
+        out.println("<p>Servlet Parameter: " + servletParam + "</p>");\par
+        out.println("<p>Context Parameter: " + contextParam + "</p>");\par
+        out.println("</body></html>");\par
+    \}\par
+\}\f0\lang9\par
+\par
+}
+ 
