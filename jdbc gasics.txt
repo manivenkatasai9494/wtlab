@@ -1,0 +1,52 @@
+package com.oracle.jdbc;
+
+import java.sql.*;
+import java.util.*;
+public class maniii {
+
+		public static void main(String[] args) throws ClassNotFoundException, SQLException {
+			// TODO Auto-generated method stub
+			try {
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//			System.out.println("driver loaded");		
+		
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/itb","System","mani");	
+				
+			//Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","mani");
+			//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/itb","System","mani");
+			System.out.println("connection done");
+			String sql="insert into student values(?,?,?)";
+			PreparedStatement pst=conn.prepareStatement(sql);
+			Scanner sc=new Scanner(System.in);
+			System.out.println("name----->");
+			String name=sc.nextLine();
+			pst.setString(1, name);
+			System.out.println("id----->");
+			Integer id=Integer.parseInt(sc.nextLine());
+			pst.setInt(2, id);
+			System.out.println("age---->");
+			Integer age=Integer.parseInt(sc.nextLine());
+			pst.setInt(3, age);
+			int res=pst.executeUpdate();
+			if(res==1) {
+				System.out.println("vachindhi maaawaa");
+			}
+			else {
+				System.out.println("nooooooooooo");
+			}
+			conn.close();
+			pst.close();
+			sc.close();
+			}
+			catch(ClassNotFoundException e)
+			{
+				System.out.print(e);
+			}
+			catch(SQLException e)
+			{
+				System.out.print(e);
+			}
+		}
+
+	}

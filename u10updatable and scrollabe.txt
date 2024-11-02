@@ -1,0 +1,63 @@
+10                package wt;
+
+import java.sql.*;
+
+public class AkashScrollableUpdatable {
+
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        try {
+            // Load the Oracle JDBC driver
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            System.out.println("Driver loaded");
+
+            // Establish the connection
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "mani");
+            System.out.println("Connection established");
+
+            // Creating a statement with scrollable and updatable ResultSet
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+            // Execute a query to select data from the table
+            String query = "SELECT * FROM akash";
+            ResultSet rs = stmt.executeQuery(query);
+
+            // Moving to the first row and updating a value
+            if (rs.next()) {
+                System.out.println("Original Name: " + rs.getString("name"));
+                rs.updateString("name", "UpdatedName");
+                rs.updateRow();
+                System.out.println("First row updated");
+            }
+
+            // Insert a new row using the ResultSet
+            rs.moveToInsertRow();
+            rs.updateInt("id", 101);
+            rs.updateString("name", "NewName");
+            rs.updateInt("age", 25);
+            rs.insertRow();
+            System.out.println("New row inserted");
+
+            // Navigating through the result set in both directions
+            System.out.println("\nAll rows in the table (forward navigation):");
+            rs.beforeFirst(); // Move to the beginning
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") + ", Age: " + rs.getInt("age"));
+            }
+
+            System.out.println("\nAll rows in the table (backward navigation):");
+            rs.afterLast(); // Move to the end
+            while (rs.previous()) {
+                System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") + ", Age: " + rs.getInt("age"));
+            }
+
+            // Close the resources
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (ClassNotFoundException e) {
+            System.out.println("ClassNotFoundException: " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+        }
+    }
+}
